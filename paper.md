@@ -10,16 +10,16 @@ tags:
   - semantic segmentation
 authors:
   - name: Sharon Fitzpatrick
-    orcid: 0000-0003-0872-7098
+    orcid: 0000-0001-6513-9132
     affiliation: 1
   - name: Daniel Buscombe
-    orcid: 0000-0003-0872-7098
+    orcid: 0000-0001-6217-5584
     affiliation: 1    
   - name: Jonathan Warrick
-    orcid: 0000-0003-0872-7098
+    orcid: 0000-0002-0205-3814
     affiliation: 2  
   - name: Kilian Vos
-    orcid: 0000-0003-0872-7098
+    orcid: 0000-0002-9518-1582
     affiliation: 3      
 affiliations:
  - name: Contracted to U.S. Geological Survey Pacific Coastal and Marine Science Center
@@ -44,6 +44,9 @@ Aside from toy problems and demonstrations, the majority of problems require
 efficient numerical tools, many of which require the same base code (e.g., for
 performing numerical orbit integration).
 
+
+# Statement of Need
+
 ``Gala`` is an Astropy-affiliated Python package for galactic dynamics. Python
 enables wrapping low-level languages (e.g., C) for speed without losing
 flexibility or ease-of-use in the user-interface. The API for ``Gala`` was
@@ -55,11 +58,17 @@ interfaces well with the implementations of physical units and astronomical
 coordinate systems in the ``Astropy`` package [@astropy] (``astropy.units`` and
 ``astropy.coordinates``).
 
+# Implementation of CoastSat workflow
+
 ``Gala`` was designed to be used by both astronomical researchers and by
 students in courses on gravitational dynamics or astronomy. It has already been
 used in a number of scientific publications [@Pearson:2017] and has also been
 used in graduate courses on Galactic dynamics to, e.g., provide interactive
-visualizations of textbook material [@Binney:2008]. The combination of speed,
+visualizations of textbook material [@Binney:2008]. 
+
+# Implementation of Segmentation Zoo workflow
+
+The combination of speed,
 design, and support for Astropy functionality in ``Gala`` will enable exciting
 scientific explorations of forthcoming data releases from the *Gaia* mission
 [@gaia] by students and experts alike. The source code for ``Gala`` has been
