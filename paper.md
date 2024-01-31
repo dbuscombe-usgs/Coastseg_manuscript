@@ -1,5 +1,5 @@
 ---
-title: 'CoastSeg: browser-based coastal shoreline detection and mapping'
+title: ': browser-based coastal shoreline detection and mapping'
 tags:
   - Python
   - shoreline
@@ -34,37 +34,21 @@ bibliography: paper.bib
 
 # Summary
 
-The forces on stars, galaxies, and dark matter under external gravitational
-fields lead to the dynamical evolution of structures in the universe. The orbits
-of these bodies are therefore key to understanding the formation, history, and
-future state of galaxies. The field of "galactic dynamics," which aims to model
-the gravitating components of galaxies to study their structure and evolution,
-is now well-established, commonly taught, and frequently used in astronomy.
-Aside from toy problems and demonstrations, the majority of problems require
-efficient numerical tools, many of which require the same base code (e.g., for
-performing numerical orbit integration).
+``CoastSeg`` is an interactive python package that allows users to download satellite imagery, identify shorelines in satellite imagery, and generate a time series of shoreline change. ``CoastSeg`` includes multiple jupyter notebooks that allow users to download satellite data, automatically extract shorelines from their satellite data, apply tide correction to their shorelines all within one experience. ``CoastSeg`` extends the functionality of other similar tools such as CoastSat by enabling users to see the data they want to download, see their shorelines on the map, and more all within one tool. Normally users would need to switch between a variety of tools to download the satellite data, extract shorelines, apply tidal correction, and more, but ``CoastSeg`` allows users to do all this in a single location all with a completely reproducible workflow.
 
 
 # Statement of Need
+In today's technological landscape, we have access to extensive collections of satellite data spanning decades. However, it's only in recent years that advancements in algorithms, machine learning, and deep learning have enabled the automation of processing this satellite imagery to accurately identify and understand its features. While a variety of independent tools are available, both free and subscription-based, to assist in data processing, using these tools often require researchers to navigate amongst various platforms, develop custom code, and  it means switching amongst various tools, writing custom code to process the data,and engage in substantial manual efforts to extract meaningful features from the imagery.
 
-``Gala`` is an Astropy-affiliated Python package for galactic dynamics. Python
-enables wrapping low-level languages (e.g., C) for speed without losing
-flexibility or ease-of-use in the user-interface. The API for ``Gala`` was
-designed to provide a class-based and user-friendly interface to fast (C or
-Cython-optimized) implementations of common operations such as gravitational
-potential and force evaluation, orbit integration, dynamical transformations,
-and chaos indicators for nonlinear dynamics. ``Gala`` also relies heavily on and
-interfaces well with the implementations of physical units and astronomical
-coordinate systems in the ``Astropy`` package [@astropy] (``astropy.units`` and
-``astropy.coordinates``).
+``CoastSeg`` is a free, open-source Python package that makes it easy to download satellite imagery, extract shorelines from hundreds to thousands of images all with one package. ``CoastSeg`` is an interactive package that provides all the necessary tools to make it easy to extract shorelines from satellite imagery. It allows users to see their extracted shorelines on the map, makes it easy to download data from Google Earth Engine, and makes tide correction much easier than existing tools. ``CoastSeg`` is built using some functionality from another Python software Coastsat [site] and with Leafmap [site]. The advantages of using ``CoastSeg`` over CoastSat are that with ``CoastSeg`` you can easily see what data you want to download on the mapping interface [reference figure], downloaded data & extracted shorelines can be shared with other users through a session system and a tide correction workflow is included making ``CoastSeg`` a all in one tool for extracting shorelines.
 
 # Implementation of CoastSat workflow
 
-``Gala`` was designed to be used by both astronomical researchers and by
-students in courses on gravitational dynamics or astronomy. It has already been
-used in a number of scientific publications [@Pearson:2017] and has also been
-used in graduate courses on Galactic dynamics to, e.g., provide interactive
-visualizations of textbook material [@Binney:2008]. 
+``CoastSeg`` provides functionality to load geojson features onto the map to make the process of extracting shorelines more interactive. Users can see which regions they will download data within, which reference shoreline will be used to find the shorelines in the imagery, and the transects that will be used to measure shoreline change.  Other tools exist to perform similar functionality but lack the user interface that helps guide the user through the process. ``CoastSeg`` provides default reference shorelines and transects that can be used to extract shorelines, so users do not need to provide their own data or draw their own reference shoreline.
+
+``CoastSeg`` is built with a object architecture. Objects on the map like ROIs, shorelines and transects each have their own class which stores the data for that feature type as well as methods related to styling the feature on the map, downloading default features, and various post processing functions.
+
+ ``CoastSeg`` employs a session-based system that enables users to track what data they’ve downloaded before and run experiments with different settings to extract optimal shorelines. This session system is what makes ``CoastSeg`` fully reproducible because all the settings, inputs, and outputs are stored within each session as well as a reference to what downloaded data was used to generated the extracted shorelines in the session. These sessions can be shared with other users allowing other users to reproduce experiments or share data that was downloaded by another user. This feature encourages collaboration and experimentation across users.
 
 # Implementation of Segmentation Zoo workflow
 
@@ -80,3 +64,9 @@ We acknowledge contributions from Brigitta Sipocz, Syrtis Major, and Semyeong
 Oh, and support from Kathryn Johnston during the genesis of this project.
 
 # References
+## Other Related Software
+- coastsat
+- coastsat_package
+- zoo
+- leafmap
+- geemap
