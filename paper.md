@@ -1,5 +1,5 @@
 ---
-title: 'CoastSeg: an extendable hub for coastal shoreline detection and mapping'
+title: 'CoastSeg: an accessible and extendable hub for coastal shoreline detection and mapping'
 tags:
   - Python
   - shoreline
@@ -81,41 +81,27 @@ We summarize the needs met by the ```CoastSeg``` project below:
 # Implementation of core SDS workflow
 
 ## Architecture & Design
+At a high level, ``CoastSeg`` is designed to be an accessible and extendible hub for both ``CoastSat``-based and alternate workflows, each of which is implemented in a single notebook. The user is therefore presented with a single menu of notebooks, each of which calls on a common set of core functionalities provided by ``Coastseg-package`` and ``Coastsat--package``, and exporting data to common file formats and conventions. 
 
-CoastSeg is installable as a pip package into a conda environment. CoastSeg’s notebooks are accessed from GitHub. We also created a pip package for the Coastsat workflow in order to a) improve the CoastSat method's software implementation without affecting the parent repository, and b) to install as a pip package into a conda environment, rather than duplicate code from CoastSat. ``CoastSeg`` is built with a object-oriented architecture, where elements required by the ``CoastSat`` workflow such as Regions of Interest (ROIs), reference shorelines, and transects are represented as distinct classes on the map. Each class stores data specific to that feature type as well as encompassing methods for styling the feature on the map, downloading default features, and executing various post-processing functions.
+CoastSeg is installable as a pip package into a conda environment. ``CoastSeg`` notebooks are accessed from GitHub. We also created a pip package for the ``Coastsat`` workflow in order to a) improve the ``CoastSat`` method's software implementation without affecting the parent repository, and b) to install as a pip package into a conda environment, rather than duplicate code from CoastSat. 
 
-At a high level, ``CoastSeg`` is designed to be an accessible and extendible hub for both ``CoastSat``-based and alternate workflows, each of which is implemented in a single notebook. The user is therefore presented with a single menu of notebooks, each of which calls on a common set of core functionalities provided by ``Coastseg-package`` and ``Coastsat--package``, and exporting data to common file formats and conventions.  
+``CoastSeg`` is built with a object-oriented architecture, where elements required by the ``CoastSat`` workflow such as Regions of Interest, reference shorelines, and transects are represented as distinct classes on the map. Each class stores data specific to that feature type as well as encompassing methods for styling the feature on the map, downloading default features, and executing various post-processing functions.
 
 
 ## Improvements to the CoastSat workflow
 
 ### Accessibility
-Browser-based. Interactive map and controls
-Reference shorelines & Transects provided
-Transect slope and shoreline metadata data available on hover
-Error handling - Error messages tell users how to fix their problem. The program generates report files
-Wiki and improved documentation
-Researched min, max, and recommended values for all settings
-A set of utility scripts for common data i/o tasks
-Visual project management aids (e.g. reference buffer plotted)
+``CoastSeg`` facilitates entirely browser-based workflows with an interactive webmap and ipywidget controls (Figure A). It interfaces with the Zenodo API to download reference shorelines for any location in the world [REF Buscombe and Fitzpatrick 2023] as well as transects, themselves providing beachface slope metadata [REF Buscombe and Fitzpatrick 2023] available on hover. We have implemented rigorous error handling using developer log files, user report files, and informative error messages that suggest problem fixes. We have also provided a set of utility scripts for common data i/o tasks, oftem the result of specific requests from our software testers (see Acknowledgements). As well as a project wiki and improved documentation, we have researched min, max, and recommended values for all settings, and have provided visual project management aids.
 
 ### Performance
-Faster and more stable (uninterruptible) image downloading
-Replaced non-cross-platform components (e.g. pkl)
-Additional filtering options
-Turn on/off cloud mask
-Filter by image size and no data pixels in image
+Faster and more stable (uninterruptible) image downloading ... more details
 
+Replaced non-cross-platform components (e.g. pkl)
+
+We added helpful workflow components such as image filtering options; users can now filter their imagery based on image size and the proportion of no data pixels in image. Additionally, the user can toggle between on or off for the cloud mask, which is helpful when the cloud masking process fails and obscures non-cloudy regions.
 
 ### Tide
-Adopted pyTMD
-Simple script for FES14 [@lyard2021fes2014] data access
-Includes several models including FES14 
-Includes polar-specific models
-Actively developed, well documented
-Split FES2014 tidal constituents into 11 global regions .. allows for very fast tide estimates
-Tide predictions = minutes, not hours
-Estimate tide height for any location by looking up what region and time, then call pyTMD to model the tide
+Tidal correction of shorelines involves estimating the tide height for any location and time using the pyTMD [@alley2017pytmd] API to model the tide. pyTMD provides an accessible script for FES14 [@lyard2021fes2014] model data access, includes several models other than FES14 includeing polar-specific models. We created an automated workflow that splits the FES2014 model data into 11 global regions. This allows the program to access only a subset of the data, facilitating fast tide estimates (in minutes rather than hours for long satellite time-series).
 
 
 ## Sessions 
@@ -132,13 +118,11 @@ SDS workflows require settings in order to extract optimal shorelines. There are
 <!-- --------------------------------------- -->
 
 # Acknowledgements
-
-- todo
+We acknowledge contributions from Robbi Bishop-Taylor, Evan Goldstein, Venus Ku, software testing and suggestions from Eli Lazarus, Andrea O'Neill, Ann Gibbs, Kathryn Weber, and Julia Heslin, and support from USGS Coastal Hazards and Resources Program, and Merbok Supplemental. 
 
 <!-- --------------------------------------- -->
 
 # References
-We acknowledge contributions from Evan Goldstein, Venus Ku, Eli Lazarus, Andrea O'Neill, Ann Gibbs, Kathryn Weber, and Julia Heslin, and support from USGS Coastal Hazards and Resources Program, and Merbok Supplemental. 
 
 
 <!-- --------------------------------------- -->
