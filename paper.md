@@ -94,6 +94,9 @@ CoastSeg is installable as a pip package into a conda environment. ``CoastSeg`` 
 ``CoastSeg`` is built with a object-oriented architecture, where elements required by the ``CoastSat`` workflow such as Regions of Interest, reference shorelines, and transects are represented as distinct classes on the map. Each class stores data specific to that feature type as well as encompassing methods for styling the feature on the map, downloading default features, and executing various post-processing functions.
 
 
+![Schematic of the SDS workflows currently available in CoastSeg. a) CoastSat workflow; b) Zoo workflow](figs/coastseg_figure_1.drawio.png){#sylt width="100%"}
+
+
 ## Improvements to the CoastSat workflow
 
 ### Accessibility
