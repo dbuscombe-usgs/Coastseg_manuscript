@@ -97,12 +97,12 @@ SDS workflows require manipulating various settings in order to extract optimal 
 
 We added helpful workflow components such as image filtering options; for example, users can now filter their imagery based on image size and the proportion of no data pixels in an image. Additionally, the user can decide to turn off cloud masking, which is necessary when the cloud masking process fails and obscures non-cloudy regions such as bright pixels of sand beaches. Finally, we replaced non-cross-platform components of the original workflow, for example the pickle format was replaced with JSON or geoJSON formats which are both human-readable and compatible with GIS and webGIS.
 
-![Schematic of the tidal correction workflow used by a) ``CoastSat`` and b) ``CoastSeg``.](figs/coastseg_figure_1.png){#sylt width="100%"}
+![Figure 1: Schematic of the tidal correction workflow used by a) ``CoastSat`` and b) ``CoastSeg``.](figs/coastseg_figure_1.png){#sylt width="100%"}
 
 ### Tide
 Tidal correction (Figure 1) of shorelines involves estimating the tide height for any location and time using the ``pyTMD`` API [@alley2017pytmd] to model the tide. ``pyTMD`` provides an accessible script for the widely used FES14 [@lyard2021fes2014] tidal model data access, and includes several models other than FES14 including polar-specific models. We created an automated workflow that splits the FES2014 model data into 11 global regions (an idea adopted from [@krause2021dea]). This allows the program to access only a subset of the data, facilitating fast tide estimates (in minutes rather than hours for multi-decadal satellite time-series).
 
-![Schematic of the SDS workflows currently available in ``CoastSeg``. a) ``CoastSat`` workflow; b) ``Zoo`` workflow.](figs/coastseg_figure_2.png){#sylt width="100%"}
+![Figure 2: Schematic of the SDS workflows currently available in ``CoastSeg``. a) ``CoastSat`` workflow; b) ``Zoo`` workflow.](figs/coastseg_figure_2.png){#sylt width="100%"}
 
 
 <!-- --------------------------------------- -->
