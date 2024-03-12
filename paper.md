@@ -65,9 +65,9 @@ We summarize the needs met by the ```CoastSeg``` project as follows:
 
 * A more accessible, entirely graphical and menu-based SDS workflow, with no (mandatory) exposure of source code to the user.
 
-* A session system that makes experimenting to discover the setting that optimal extract shorelines from satellite imagery.
+* A session system that streamlines the experimentation process to find the settings that extract optimal shorelines from satellite imagery.
 
-* Improved core SDS workflow components, such as faster and more seamless tidal correction workflow, and faster image downloading.
+* Improved core SDS workflow components, such as a faster and more seamless tidal correction workflow, and faster image downloading.
 
 * Consolidation of workflows in a single platform and reusable codebase.
 
