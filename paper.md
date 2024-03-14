@@ -36,6 +36,9 @@ date: 12 March 2024
 bibliography: paper.bib
 ---
 
+
+This draft manuscript is distributed solely for purposes of courtesy review and comments received will be addressed and treated as appropriate to ensure there is no conflict of interest. Its content is deliberative and predecisional, so it must not be disclosed or released by reviewers. Because the manuscript has not yet been approved for publication by the U.S. Geological Survey (USGS), it does not represent any official USGS finding or policy.
+
 <!-- --------------------------------------- -->
 # Summary
 ``CoastSeg`` is an interactive browser-based program that aims to broaden the adoption of satellite-derived shoreline (SDS) detection and coastal landcover mapping workflows among coastal scientists and coastal resource management practitioners. SDS is a sub-field of coastal sciences that aims to detect and post-process a time-series of shoreline locations from publicly available satellite imagery [@turner2021satellite; @vitousek2023future]. ``CoastSeg`` is a python package installed via pip into a ``conda`` environment that serves as an API for building custom SDS workflows. ``CoastSeg`` also provides full SDS workflow implementations via jupyter notebooks and python scripts that call functions and classes in the core ``CoastSeg`` API for specific workflows. Two fully functioning SDS workflows are already provided, and more could be added by collaborators in the SDS software community. All API codes, notebooks, scripts, and documentation are hosted on the ``CoastSeg`` GitHub repository.
